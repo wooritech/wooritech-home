@@ -1,0 +1,37 @@
+@import "luplin-typo";
+@import "luplin-utils";
+@import "luplin-grid";
+@import "luplin-ui";
+@import "luplin-hack";
+
+/**
+ * Common ...
+ */
+html, body{
+  margin:0; padding:0;
+  height:100%;
+  -webkit-text-size-adjust: 100%;
+  background:$lui-plain;
+  box-sizing: border-box;
+  font-size:13px;
+}
+
+body{
+  &.is-active{ //모바일 메뉴 활성시 스크롤 제어
+    overflow: hidden;
+  }
+}
+
+.root{
+  height:100%;
+}
+
+::selection{
+  background:#2F8B57;
+  color:white;
+}
+
+::-moz-selection{
+  background:#2F8B57;
+  color:white;
+}

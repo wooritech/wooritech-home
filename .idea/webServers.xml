@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="fd3ec8f3-40b0-44fb-ada3-cd3dcbdea75b" name="KT-Server" url="http://14.63.185.190">
+        <fileTransfer host="14.63.185.190" port="2121" rootFolder="/wooritech.jowrney.com">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="2121" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

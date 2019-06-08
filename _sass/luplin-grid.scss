@@ -1,0 +1,163 @@
+//스크린 최대 가로 크기
+$xs-screen-width:100%;
+$sm-screen-width:576px;
+$md-screen-width:768px;
+$lg-screen-width:992px;
+$xl-screen-width:1200px;
+$ul-screen-width:1600px;
+//그리드 최대 가로 크기
+$xs-grid-width:100%;
+$sm-grid-width:540px;
+$md-grid-width:720px;
+$lg-grid-width:960px;
+$xl-grid-width:1140px;
+$ul-grid-width:1440px;
+//그리드 옵션
+$xs-grid-gutter-width :40px;
+$sm-grid-gutter-width :20px;
+$md-grid-gutter-width :20px;
+$lg-grid-gutter-width :20px;
+$xl-grid-gutter-width :30px;
+$ul-grid-gutter-width :30px;
+$grid-num-bine-nums :12;
+//그리드 Prefix
+$grid-prefix: xs, sm, md, lg, xl, ul;
+
+
+
+// Grid System based on 12 bineumns
+// Extra small(none, xs) < Small(sm) < Medium(md) < Large(lg) < Extra large(xl) < Ultra large(ul)
+// xs:none(auto) < sm:540px < md:720px < lg:960px < 1140px < 1440px
+
+@mixin action($media...){
+  @each $m in $media {
+    @if $m == ul {
+      @media only screen and (min-width: $ul-screen-width) {
+        @content;
+      }
+    } @else if $m == xl {
+      @media only screen and (min-width: $xl-screen-width) and (max-width: $ul-screen-width - 1) {
+        @content;
+      }
+    } @else if $m == lg {
+      @media only screen and (min-width: $lg-screen-width) and (max-width: $xl-screen-width - 1) {
+        @content;
+      }
+    } @else if $m == md {
+      @media only screen and (min-width: $md-screen-width) and (max-width: $lg-screen-width - 1) {
+        @content;
+      }
+    } @else if $m == sm {
+      @media only screen and (min-width: $sm-screen-width) and (max-width: $md-screen-width - 1) {
+        @content;
+      }
+    } @else {
+      @media only screen and (max-width: $sm-screen-width - 1) {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin gs($media:null){
+  $p : percentage(1/$grid-num-bine-nums);
+  @for $i from 1 through $grid-num-bine-nums {
+    @if($media){
+      .bine-#{$media}-#{$i} {
+        width: $p * $i;
+        float:left; height:inherit;
+      }
+    }@else{
+      .bine-#{$i} {
+        width: $p * $i;
+        float:left; height:inherit;
+      }
+    }
+  }
+}
+
+
+$var-grid-width:(
+        xs:$xs-grid-width,
+        sm:$sm-grid-width,
+        md:$md-grid-width,
+        lg:$lg-grid-width,
+        xl:$xl-grid-width,
+        ul:$ul-grid-width
+);
+@mixin var-get-grid-width($var-name){
+  width: map-get($var-grid-width, $var-name);
+}
+
+$var-gutter-width:(
+        xs:$xs-grid-gutter-width,
+        sm:$sm-grid-gutter-width,
+        md:$md-grid-gutter-width,
+        lg:$lg-grid-gutter-width,
+        xl:$xl-grid-gutter-width,
+        ul:$ul-grid-gutter-width
+);
+@mixin var-get-gutter-width($var-name){
+  margin:0 map-get($var-gutter-width, $var-name)/2;
+}
+@mixin var-get-gutter-minus-width($var-name){
+  $gd : map-get($var-gutter-width, $var-name)/2;
+  margin:0 calc(#{$gd} * -1);
+
+}
+
+@mixin activate-gs(){
+  .stem{ margin:0px auto; }
+  .bine{ width:100%; }
+  .bine-no{ display: none; }
+  @include gs();
+  @each $media in $grid-prefix{
+    @include action(#{$media}){
+      .stem{ @include var-get-grid-width(#{$media}); }
+      .no-#{$media}{ display:none;}
+      .cone{ @include var-get-gutter-width(#{$media}); }
+      .branch{@include var-get-gutter-minus-width(#{$media});}
+      @include gs(#{$media});
+    }
+  }
+  .fullwidth{ width:100%;}
+}
+
+@include activate-gs();
+
+.clearfix {clear:both;}
+
+
+
+
+
+// Test ...
+/*
+.root{
+  position: absolute;
+  width:100%; height:100%;
+  .trunk {
+    height:100%;
+    .stem {
+      height:100%;
+      div[class^="bine"] {
+        height:100%;
+        background: gray;
+        box-sizing: border-box;
+        @include border(1px, solid, lighten(gray, 10%), left);
+        @include border(1px, solid, lighten(gray, 10%), right);
+        .cone {
+          height:100%;
+          text-align: center;
+          background: lighten(gray, 20%);
+          color: darken(gray, 10%);
+          font-size: 12px;
+          @include border(1px, solid, darken(gray, 10%), left);
+          @include border(1px, solid, darken(gray, 10%), right);
+        }
+      }
+    }
+  }
+}
+*/
+
