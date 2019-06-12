@@ -4,4 +4,31 @@
 @import 'luplin';
 @import 'hamburger';
 @import 'markdown';
-@import 'luplin-icons';
+
+$wt-black   : #232323;
+$wt-white   : #fff;
+$wt-orange  : #EC6700;
+$wt-gray    : #EEEEEE;
+
+
+// RWD ////////////////////////////////////
+
+.root{ //ul
+  background: url('/assets/img/grid-ul.png') repeat-y center;
+  @include action(xl){
+    background: url('/assets/img/grid-xl.png') repeat-y center;
+  }
+  @include action(lg){
+    background: url('/assets/img/grid-lg.png') repeat-y center;
+  }
+  @include action(md){
+    background: url('/assets/img/grid-md.png') repeat-y center;
+  }
+  @include action(sm){
+    background: url('/assets/img/grid-sm.png') repeat-y center;
+  }
+  @include action(xs){
+    background: url('/assets/img/grid-xs.png') repeat-y center;
+  }
+}
+
