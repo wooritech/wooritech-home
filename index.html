@@ -22,3 +22,24 @@ title : '우리테크 : DEVELOPER FIRST'
     </div>
 </div>
 <!-- e.맴버 -->
+
+
+<!-- s.맴버 -->
+<div class="trunk">
+    <div class="stem">
+        {% for p in site.data.wooritech_contents.philasophy %}
+        <div class="bine-2 bine-xs-12 bine-sm-12">
+            <div class="cone">
+                <div class="content-box">
+                    {{ p.en }}<br />
+                    {{ member.img1 }}<br />
+                    {{ member.img2 }}<br />
+                    {{ member.opt }}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <div class="clearfix"></div>
+    </div>
+</div>
+<!-- e.맴버 -->
