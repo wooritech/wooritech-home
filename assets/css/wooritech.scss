@@ -11,6 +11,186 @@ $wt-orange  : #EC6700;
 $wt-gray    : #EEEEEE;
 
 
+.contents{
+  margin-top:1500px;
+}
+
+.vertical{
+  height:0px;
+  position: relative;
+  .vtitle{
+    font-family: "verdana";
+    font-weight: bold;
+    position: absolute;
+    color:lighten($wt-black, 30%);
+    display: inline-block;
+    transform: rotate( -90deg );
+    bottom:0;
+    margin-left:20px;
+    font-size:16px;
+    transform-origin:top left;
+    &.v1{
+      margin-bottom:0px;
+    }
+    &.v2{
+      margin-bottom:-160px;
+    }
+    &.v3{
+      margin-bottom:-260px;
+    }
+    &.v4{
+      margin-bottom:0px;
+    }
+    &.year{
+      font-weight: normal;
+      font-size:36px;
+      margin-bottom:-265px;
+      margin-left:0;
+      color:$wt-black;
+      padding-bottom:10px;
+      &:before{
+        position: absolute;
+        bottom:0;
+        right:0;
+        content: "";
+        display: inline-block;
+        width: 100px;
+        height: 3px;
+        border-bottom:2px solid $wt-black;
+      }
+    }
+  }
+}
+.visual{
+  position: fixed;
+  top:0; left:0;
+  width:100%;
+  height:100%;
+  z-index: -1;
+}
+
+.top{
+  position: fixed;
+  top:0; left:0;
+  width:100%;
+  z-index: 100;
+  .top-logo{
+    img{width:170px; height:90px;}
+  }
+}
+
+.phils{
+  .phil-card{
+    margin-bottom:60px;
+    h2{font-size:36px;}
+    h3{font-size:18px;}
+    p{
+      font-size:18px;
+      color:lighten($wt-black, 10%);
+    }
+  }
+}
+.features{
+  .feat-card{
+    margin-bottom:140px;
+    img{
+      width:180px; height:180px;
+      float:left;
+      margin-left:20px;
+    }
+    h2{
+      font-size:36px;
+      margin-left:240px;
+    }
+    p{
+      font-size:18px;
+      color:lighten($wt-black, 10%);
+      margin-left:240px;
+    }
+  }
+}
+
+.history{
+  .history-card{
+    margin-bottom:170px;
+    ul{
+      list-style: none;
+      margin:0; padding:0;
+      margin-left:80px;
+      li{
+        padding-bottom:10px;
+        color:lighten($wt-black, 10%);
+      }
+    }
+  }
+}
+
+.products{
+  .product-card{
+    img{
+      width:270px;
+      height:100px;
+    }
+  }
+}
+
+.members{ //trunk...
+  position: absolute;
+  top:0; left:0;
+  width:100%;
+  z-index:3;
+  margin-top:620px;
+  .member-bine{
+    height:400px;
+    .member-card{
+      box-sizing: border-box;
+      background:lighten($wt-gray, 1%);
+      height:300px;
+      &.rookie{
+        position: relative;
+        .profile-layer{
+          padding-top:30px;
+          .profile {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto;
+            background: darken($wt-gray, 5%) url('/assets/img/rookie-p.png') no-repeat center center;
+            background-size: cover;
+            border-radius: 50%;
+          }
+        }
+        .desc{
+          padding:20px;
+          font-size:14px;
+          color:lighten($wt-black, 30%);
+        }
+        .btn-layer{
+          position: absolute;
+          box-sizing: border-box;
+          bottom:0;
+          width:100%;
+          padding:20px;
+          .btn{
+            display: inline-block;
+            width:100%;
+            text-align: center;
+            text-decoration: none;
+            font-size:14px;
+            border:1px solid $wt-black;
+            color:$wt-black;
+            padding:10px 0;
+            &:hover{
+              background:$wt-black;
+              color: $wt-white;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
 // RWD ////////////////////////////////////
 
 .root{ //ul
@@ -30,5 +210,246 @@ $wt-gray    : #EEEEEE;
   @include action(xs){
     background: url('/assets/img/grid-xs.png') repeat-y center;
   }
+
 }
 
+@include action(xl) {
+  .trunk{
+    &.members{
+      .stem{
+        .member-bine{
+          height:350px;
+          .member-card{
+            height:238px;
+            &.rookie{
+              .profile-layer{
+                padding-top:20px;
+              }
+              .desc{
+                padding:10px;
+              }
+              .btn-layer{
+                padding:10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include action(lg) {
+  .trunk{
+    &.members{
+      .stem{
+        .member-bine{
+          height:300px;
+          .member-card{
+            height:200px;
+            &.rookie{
+              .profile-layer{
+                padding-top:10px;
+              }
+              .desc{
+                padding:10px;
+                font-size:12px;
+              }
+              .btn-layer{
+                padding:10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include action(md) {
+  .trunk{
+    &.members{
+      .stem{
+        .member-bine{
+          height:400px;
+          .member-card{
+            height:300px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include action(sm) {
+  .trunk{
+    &.members{
+      .stem{
+        .member-bine{
+          height:250px;
+          .member-card{
+            height:170px;
+            &.rookie{
+              .profile-layer{
+                padding-top:10px;
+                .profile{
+                  width:60px; height:60px;
+                }
+              }
+              .desc{
+                padding:10px;
+                font-size:12px;
+              }
+              .btn-layer{
+                padding:10px;
+                .btn{
+                  padding:6px 0;
+                  font-size:12px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include action(xs) {
+  .trunk{
+    &.members{
+      .stem{
+        width:300px;
+        .member-bine{
+          height:250px;
+          .member-card{
+            height:180px;
+            &.rookie{
+              .profile-layer{
+                padding-top:10px;
+                .profile{
+                  width:60px; height:60px;
+                }
+              }
+              .desc{
+                padding:10px;
+                font-size:12px;
+              }
+              .btn-layer{
+                padding:10px;
+                .btn{
+                  padding:6px 0;
+                  font-size:12px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+// Animation ... //////////////////////////////
+
+@mixin ani($keyname, $sec, $count) {
+  -webkit-animation: $keyname $sec $count;
+  -moz-animation: $keyname $sec $count;
+  -o-animation: $keyname $sec $count;
+  animation: $keyname $sec $count;
+}
+
+@keyframes vMemberCardDown {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(30px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes vMemberCardUp {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+.ani-member-card-1{
+  @include ani(vMemberCardUp, 5s, infinite);
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s; margin-top:20px;
+}
+.ani-member-card-2{
+  @include ani(vMemberCardDown, 5s, infinite);
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.5s; margin-top:0;
+}
+.ani-member-card-3{
+  @include ani(vMemberCardUp, 5s, infinite);
+  animation-timing-function: ease-in-out;
+  animation-delay: 1s; margin-top:40px;
+}
+.ani-member-card-4{
+  @include ani(vMemberCardDown, 5s, infinite);
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.2s; margin-top:20px;
+}
+.ani-member-card-5{
+  @include ani(vMemberCardDown, 5s, infinite);
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.8s; margin-top:0;
+}
+.ani-member-card-6{
+  @include ani(vMemberCardDown, 5s, infinite);
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.4s;
+}
+.ani-member-card-7{
+  @include ani(vMemberCardDown, 5s, infinite);
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.6s; margin-top:0;
+}
+.ani-member-card-8{
+  @include ani(vMemberCardUp, 5s, infinite);
+  animation-timing-function: ease-in-out;
+  animation-delay: 1.2s; margin-top:40px;
+}
+.ani-member-card-9{
+  @include ani(vMemberCardUp, 5s, infinite);
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.4s; margin-top:20px;
+}
+.ani-member-card-rookie{
+  @include ani(vMemberCardDown, 5s, infinite);
+  animation-timing-function: ease-in-out;
+  animation-delay: 1s; margin-top:0;
+}
+
+// UI ... //////////////////////////////
+.btn{
+  display: inline-block;
+  font-size:16px;
+  padding:10px 15px;
+  border:1px solid $wt-black;
+  text-decoration: none;
+  color:$wt-black;
+  &:hover{
+    background:$wt-black;
+    color:$wt-white;
+  }
+}
+
+.h10{ height:10px;}
+.h20{ height:20px;}
+.h30{ height:30px;}
+.h40{ height:40px;}
+.h50{ height:50px;}
+.h60{ height:60px;}
+.h70{ height:70px;}
+.h80{ height:80px;}
+.h90{ height:90px;}
+.h100{ height:100px;}
+.h200{ height:200px;}
+.h300{ height:300px;}

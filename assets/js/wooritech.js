@@ -222,7 +222,10 @@ var pageObj = {
             jQuery(this).text("");
             jQuery(this).append("<i class='icon-reply-all'></i>");
         });
-    }    
+    },
+    particles:function(){
+
+    }
 };
 
 jQuery(document.body).ready(function(){

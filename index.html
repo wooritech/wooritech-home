@@ -3,43 +3,182 @@ layout: wooritech-home
 title : '우리테크 : DEVELOPER FIRST'
 ---
 
-<!-- s.맴버 -->
-<div class="trunk section">
-    <div class="stem article">
-        {% for member in site.data.wooritech_member.members %}
-        <div class="bine-2 bine-xs-12 bine-sm-12">
-            <div class="cone">
-                <div class="content-box">
-                    {{ member.name }}<br />
-                    {{ member.img1 }}<br />
-                    {{ member.img2 }}<br />
-                    {{ member.opt }}
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-        <div class="clearfix"></div>
-    </div>
+
+
+<div class="trunk visual" id="particles-js">
 </div>
-<!-- e.맴버 -->
 
-
-<!-- s.맴버 -->
-<div class="trunk">
+<!-- s.상단 -->
+<div class="trunk top">
     <div class="stem">
-        {% for p in site.data.wooritech_contents.philasophy %}
-        <div class="bine-2 bine-xs-12 bine-sm-12">
-            <div class="cone">
-                <div class="content-box">
-                    {{ p.en }}<br />
-                    {{ member.img1 }}<br />
-                    {{ member.img2 }}<br />
-                    {{ member.opt }}
-                </div>
+        <div class="bine-2">
+            <a href="#" class="top-logo"><img src="/assets/img/wt-logo-top@2x.png"  /></a>
+        </div>
+        <div class="bine-6">사람 / 회사소개 / 제품/ 채용 /문의</div>
+        <div class="bine-4"></div>
+    </div>
+</div>
+<!-- e.상단 -->
+
+<!-- s.맴버 -->
+<div class="trunk members">
+    <div class="stem vertical">
+        <span class="vtitle v1">Our People</span>
+    </div>
+    <div class="stem">
+        {% for member in site.data.wooritech_members.members %}
+        <div class="bine-2 bine-xs-6 bine-sm-3 bine-md-4 member-bine">
+            <div class="content-box member-card ani-member-card-{{ forloop.index }}" style="margin:">
+                {{ member.name }}<br />
+                {{ member.img1 }}<br />
+                {{ member.img2 }}<br />
+                {{ member.opt }}
             </div>
         </div>
         {% endfor %}
+        <div class="bine-2 bine-xs-6 bine-sm-3 bine-md-4 member-bine">
+            <div class="content-box member-card rookie ani-member-card-rookie" style="margin:">
+                <div class="profile-layer">
+                    <div class="profile"></div>
+                </div>
+                <div class="desc">이곳은 당신을 위한 자리입니디. 우리와 함께 하겠어요?</div>
+                <div class="btn-layer">
+                    <a href="#" class="btn">지원하기 <i class="icon icon-dot-3"></i></a>
+                </div>
+            </div>
+        </div>
         <div class="clearfix"></div>
     </div>
 </div>
+<div class="clearfix"></div>
 <!-- e.맴버 -->
+
+
+<div class="contents">
+    <!-- s.철학 -->
+    <div class="trunk phils">
+        <div class="stem vertical">
+            <span class="vtitle v2">Our Philasophy</span>
+        </div>
+        <div class="stem">
+            <div class="bine-2"><div class="cone">&nbsp;</div></div>
+            <div class="bine-10">
+                <div class="cone">
+                    <div class="content-box">
+                        {% for p in site.data.wooritech_contents.philasophy %}
+                        <div class="phil-card">
+                            <h2>{{ p.en | upcase }}</h2>
+                            <h3>{{ p.ko }}</h3>
+                            <p>{{ p.desc }}</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!-- e.철학 -->
+
+    <!-- s.소개 -->
+    <div class="trunk features">
+        <div class="stem vertical">
+            <span class="vtitle v3">Introduce WOORITECH</span>
+        </div>
+        <div class="stem">
+            <div class="bine-2">&nbsp;</div>
+            <div class="bine-10">
+                <div class="cone">
+                    <div class="content-box">
+                        {% for f in site.data.wooritech_contents.features %}
+                        <div class="feat-card">
+                            <img src="{{ f.img }}" />
+                            <h2>{{ f.title }}</h2>
+                            <p>{{ f.desc }}</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="stem">
+            <div class="bine-2">&nbsp;</div>
+            <div class="bine-10">
+                <div class="cone">
+                    <a href="#" class="btn"><i class="icon icon-download"></i> 우리테크 회사 소개서 다운로드</a>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!-- e.소개 -->
+
+    <div class="h200"></div>
+
+    <!-- s.히스토리 -->
+    <div class="trunk history">
+        <div class="stem vertical">
+            <span class="vtitle v4">History</span>
+        </div>
+        <div class="h50"></div>
+        <div class="stem">
+            {% for h in site.data.wooritech_contents.history %}
+            <div class="bine-4 bine-xs-12 bine-sm-12">
+                <div class="cone">
+                    <div class="content-box">
+                        <div class="history-card">
+                            <div class="vertical"><h2 class="vtitle year">{{ h.year }}</h2></div>
+                            <ul>
+                                {% assign do = h.did | split: ", " %}
+                                {% for d in do %}
+                                <li>{{ d }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!-- e.히스토리 -->
+    <!-- s.제품 -->
+    <div class="trunk products">
+        <div class="stem vertical">
+            <span class="vtitle v5">Our Products</span>
+        </div>
+        <div class="h50"></div>
+        <div class="stem">
+            {% for pt in site.data.wooritech_contents.prouducts %}
+            <div class="bine-3">
+                <div class="cone">
+                    <div class="content-box">
+                        <div class="product-card">
+                            <img src="{{pt.logo}}" />
+                          <h2>{{pt.title}}</h2>
+                            <p>{{pt.desc}}</p>
+                            <a href="#" class="btn">자세히 <i class="icon icon-dot-3"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!-- e.제품 -->
+</div>
+
+<div style="height:300px;"></div>
+
+<script src="/assets/plugins/particles/particles.js"></script>
+<script>
+    jQuery(document.body).ready(function(){
+        particlesJS.load('particles-js', '/assets/plugins/particles/particlesjs-config.json', function() {
+            console.log('callback - particles.js config loaded');
+        });
+    });
+</script>
