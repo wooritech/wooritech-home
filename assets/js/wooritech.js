@@ -147,10 +147,10 @@ var pageObj = {
         var hmh = jQuery('.header-m').height(); //Header Height...
 
         if(scroll) {
-            if(scroll >= (vh-hh) && !jQuery('.header').hasClass('scrolled')){
+            if(scroll >= hh && !jQuery('.header').hasClass('scrolled')){
                 jQuery('.header').addClass('scrolled');
                 jQuery('.back-to-top').addClass('scrolled');
-            }else if(scroll <= (vh-hh) && jQuery('.header').hasClass('scrolled')){
+            }else if(scroll <= hh && jQuery('.header').hasClass('scrolled')){
                 jQuery('.header').removeClass('scrolled');
                 jQuery('.back-to-top').removeClass('scrolled');
             }
@@ -159,15 +159,15 @@ var pageObj = {
             jQuery('.back-to-top').removeClass('scrolled');
         }
 
-        if(scroll) {
-            if(scroll >= (vh-hmh) && !jQuery('.header-m').hasClass('scrolled')){
-                jQuery('.header-m').addClass('scrolled');
-            }else if(scroll <= (vh-hmh) && jQuery('.header-m').hasClass('scrolled')){
-                jQuery('.header-m').removeClass('scrolled');
-            }
-        } else {
-            jQuery('.header-m').removeClass('scrolled');
-        }
+        // if(scroll) {
+        //     if(scroll >= hh && !jQuery('.header-m').hasClass('scrolled')){
+        //         jQuery('.header-m').addClass('scrolled');
+        //     }else if(scroll <= (vh-hmh) && jQuery('.header-m').hasClass('scrolled')){
+        //         jQuery('.header-m').removeClass('scrolled');
+        //     }
+        // } else {
+        //     jQuery('.header-m').removeClass('scrolled');
+        // }
 
         if(scroll){
             jQuery('.back-top-top').addClass('scrolled');
@@ -239,6 +239,23 @@ jQuery(document.body).ready(function(){
     pageObj.reversefootnote();
     jQuery(window).resize(pageObj.pageResize);
     jQuery(window).scroll(pageObj.pageScroll);
-});
 
+
+    var fileTarget = $('.c-upload .upload-hidden');
+
+    fileTarget.on('change', function(){
+        if(window.FileReader){
+            // 파일명 추출
+            var filename = $(this)[0].files[0].name;
+        }
+
+        else {
+            // Old IE 파일명 추출
+            var filename = $(this).val().split('/').pop().split('\\').pop();
+        };
+
+        $(this).siblings('.upload-name').val(filename);
+    });
+
+});
 

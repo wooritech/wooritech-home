@@ -9,18 +9,66 @@ title : '우리테크 : DEVELOPER FIRST'
 </div>
 
 <!-- s.상단 -->
-<div class="trunk top">
+<div class="header-m-pan">
+    <nav>
+        <ul class="topmenu">
+            {% for menu in site.data.wooritech_menu.topmenu %}
+            <li><a href="{{ menu.url}}">{{ menu.label }}</a></li>
+            {% endfor %}
+        </ul>
+        <ul class="linkmenu">
+            {% for link in site.data.wooritech_menu.links %}
+            <li><a href="{{ link.url }}" target="{{ link.target }}">{{ link.label }}</a></li>
+            {% endfor %}
+        </ul>
+    </nav>
+</div>
+<div class="trunk header">
     <div class="stem">
-        <div class="bine-2">
+        <div class="bine-2 bine-xs-8 bine-sm-8 bine-md-8 bine-lg-3 bine-xl-3">
             <a href="#" class="top-logo"><img src="/assets/img/wt-logo-top@2x.png"  /></a>
         </div>
-        <div class="bine-6">사람 / 회사소개 / 제품/ 채용 /문의</div>
-        <div class="bine-4"></div>
+        <div class="bine-6 no-xs no-sm no-md bine-lg-5 bine-xl-5">
+            <ul class="top-menu no-xs no-sm no-md">
+                {% for menu in site.data.wooritech_menu.topmenu %}
+                <li><a href="{{ menu.url}}">{{ menu.label }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="bine-4 bine-xs-4 bine-sm-4 bine-md-4 bine-lg-4 bine-xl-4">
+            <ul class="top-links no-xs no-sm no-md">
+                {% for link in site.data.wooritech_menu.links %}
+                <li><a href="{{ link.url }}" target="{{ link.target }}">{{ link.label }}</a></li>
+                {% endfor %}
+            </ul>
+            <a href="#realgrid" class="hamburger-menu no-ul no-lg no-xl">
+                <div class="hamburger">
+                    <div class="hamburger-box">
+                        <div class="hamburger-inner"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
     </div>
 </div>
+
+<div class="trunk slogan">
+    <div class="stem">
+        <div class="bine-2 no-xs no-sm no-md">&nbsp;</div>
+        <div class="bine-10 bine-xs-12 bine-sm-12 bine-md-12">
+            <div class="wt-slogan">
+                <h1>DEVELOPER FIRST</h1>
+                <h2>REALIZING LIMITLESS POTENTIAL</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <!-- e.상단 -->
 
 <!-- s.맴버 -->
+<a name="people"></a>
 <div class="trunk members">
     <div class="stem vertical">
         <span class="vtitle v1">Our People</span>
@@ -29,10 +77,10 @@ title : '우리테크 : DEVELOPER FIRST'
         {% for member in site.data.wooritech_members.members %}
         <div class="bine-2 bine-xs-6 bine-sm-3 bine-md-4 member-bine">
             <div class="content-box member-card ani-member-card-{{ forloop.index }}" style="margin:">
-                {{ member.name }}<br />
-                {{ member.img1 }}<br />
-                {{ member.img2 }}<br />
-                {{ member.opt }}
+                <!--{{ member.name }}<br />-->
+                <!--{{ member.img1 }}<br />-->
+                <!--{{ member.img2 }}<br />-->
+                <!--{{ member.opt }}-->
             </div>
         </div>
         {% endfor %}
@@ -53,7 +101,7 @@ title : '우리테크 : DEVELOPER FIRST'
 <div class="clearfix"></div>
 <!-- e.맴버 -->
 
-
+<a name="intro"></a>
 <div class="contents">
     <!-- s.철학 -->
     <div class="trunk phils">
@@ -61,8 +109,8 @@ title : '우리테크 : DEVELOPER FIRST'
             <span class="vtitle v2">Our Philasophy</span>
         </div>
         <div class="stem">
-            <div class="bine-2"><div class="cone">&nbsp;</div></div>
-            <div class="bine-10">
+            <div class="bine-2 no-xs bine-sm-2"><div class="cone">&nbsp;</div></div>
+            <div class="bine-10 bine-xs-12 bine-sm-10">
                 <div class="cone">
                     <div class="content-box">
                         {% for p in site.data.wooritech_contents.philasophy %}
@@ -87,8 +135,8 @@ title : '우리테크 : DEVELOPER FIRST'
             <span class="vtitle v3">Introduce WOORITECH</span>
         </div>
         <div class="stem">
-            <div class="bine-2">&nbsp;</div>
-            <div class="bine-10">
+            <div class="bine-2 no-xs bine-sm-2">&nbsp;</div>
+            <div class="bine-10 bine-xs-12 bine-sm-10">
                 <div class="cone">
                     <div class="content-box">
                         {% for f in site.data.wooritech_contents.features %}
@@ -104,8 +152,8 @@ title : '우리테크 : DEVELOPER FIRST'
             <div class="clearfix"></div>
         </div>
         <div class="stem">
-            <div class="bine-2">&nbsp;</div>
-            <div class="bine-10">
+            <div class="bine-2 no-xs bine-sm-2">&nbsp;</div>
+            <div class="bine-10 bine-xs-12 bine-sm-10">
                 <div class="cone">
                     <a href="#" class="btn"><i class="icon icon-download"></i> 우리테크 회사 소개서 다운로드</a>
                 </div>
@@ -115,14 +163,11 @@ title : '우리테크 : DEVELOPER FIRST'
     </div>
     <!-- e.소개 -->
 
-    <div class="h200"></div>
-
     <!-- s.히스토리 -->
     <div class="trunk history">
         <div class="stem vertical">
             <span class="vtitle v4">History</span>
         </div>
-        <div class="h50"></div>
         <div class="stem">
             {% for h in site.data.wooritech_contents.history %}
             <div class="bine-4 bine-xs-12 bine-sm-12">
@@ -146,19 +191,30 @@ title : '우리테크 : DEVELOPER FIRST'
     </div>
     <!-- e.히스토리 -->
     <!-- s.제품 -->
+    <a name="products"></a>
     <div class="trunk products">
+        <div class="stem">
+            <div class="bine-2 no-xs no-sm no-md no-lg">&nbsp;</div>
+            <div class="bine-10 bine-xs-12 bine-sm-12 bine-md-12 bine-lg-12">
+                <div class="product-slogan">
+                    <h1>사람과 데이터를 잇다</h1>
+                    <h3>이 순간에도 수없이 생성되고 사라지는 데이터 홍수.  우리는 그 속에서 살아가고 있습니다.</h3>
+                    <h3>의미있는 데이터를 시각화하고 인간에게 이롭게 하는 길을 걸어갑니다.</h3>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
         <div class="stem vertical">
             <span class="vtitle v5">Our Products</span>
         </div>
-        <div class="h50"></div>
         <div class="stem">
             {% for pt in site.data.wooritech_contents.prouducts %}
-            <div class="bine-3">
+            <div class="bine-3 bine-xs-12 bine-sm-6 bine-md-6 bine-lg-6">
                 <div class="cone">
                     <div class="content-box">
                         <div class="product-card">
                             <img src="{{pt.logo}}" />
-                          <h2>{{pt.title}}</h2>
+                            <h2>{{pt.title}}</h2>
                             <p>{{pt.desc}}</p>
                             <a href="#" class="btn">자세히 <i class="icon icon-dot-3"></i></a>
                         </div>
@@ -170,9 +226,128 @@ title : '우리테크 : DEVELOPER FIRST'
         </div>
     </div>
     <!-- e.제품 -->
-</div>
 
-<div style="height:300px;"></div>
+    <!-- s.고객사 -->
+    <div class="trunk clients">
+        <div class="stem vertical">
+            <span class="vtitle v6">Our Clients</span>
+        </div>
+        <div class="stem">
+            <div class="bine-2 no-xs bine-sm-2">&nbsp;</div>
+            <div class="bine-10 bine-xs-12 bine-sm-10">
+            {% for c in site.data.wooritech_clients.clients %}
+                <img src="{{ c.logo }}" title="{{ c.label }}" class="client-logo" />
+            {% endfor %}
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!-- e.고객사 -->
+    <!-- s.문의 -->
+    <a name="contact"></a>
+    <div class="trunk contact">
+        <div class="stem vertical">
+            <span class="vtitle v7">Contact us</span>
+        </div>
+        <div class="stem">
+            <div class="bine-2 no-xs bine-sm-2">&nbsp;</div>
+            <div class="bine-5 bine-xs-12 bind-sm-5">
+                <div class="cone contact-info">
+                    <h3>문의</h3>
+                    <ul>
+                        <li>경기도 성남시 분당구 운중로 135 더원스퀘어 603호</li>
+                        <li><a href="tel:05053258080"><i class="icon icon-phone"></i> 0505-325-8080</a></li>
+                        <li><a href="mailto:support@realgrid.com"><i class="icon icon-mail"></i> support@realgrid.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bine-5 bine-xs-12 bind-sm-5">
+                <div class="cone contact-info">
+                    <h3>구입문의</h3>
+                    <ul>
+                        <li>영업대표: 윤 대 섭 이사</li>
+                        <li><a href="tel:01063244761"><i class="icon icon-phone"></i> 010-6324-4761</a></li>
+                        <li><a href="mailto:support@realgrid.com"><i class="icon icon-mail"></i> dsyoon@realgrid.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="stem">
+            <div class="bine-2 no-xs no-sm">&nbsp;</div>
+            <div class="bine-10 bine-xs-12 bine-sm-12">
+                <div class="contact-map">
+
+                </div>
+            </div>
+        </div>
+        <div class="stem">
+            <div class="bine-2 no-xs no-sm">&nbsp;</div>
+            <div class="bine-10 bine-xs-12 bine-sm-12">
+                <a name="hire"></a>
+                <div class="contact-form">
+                    <span class="wild"><i class="icon icon-info-circled"></i> 아래 양식을 작성하여 문의해주세요.</span>
+
+                    <dl class="form-layer-1">
+                        <dt><span class="num">1</span>소개 부탁드려요</dt>
+                        <dd>
+                            <div class="c-input-1"><span class="label">이름</span><input type="text" /></div>
+                            <div class="clearfix"></div>
+                        </dd>
+                        <dd>
+                            <div class="c-input-2"><span class="label">이메일</span><input type="text" /></div>
+                            <div class="c-input-3"><span class="label">전화번호</span><input type="text" /></div>
+                            <div class="clearfix"></div>
+                        </dd>
+                        <dd>
+                            <div class="c-input-4"><span class="label">직책</span><input type="text" /></div>
+                            <div class="c-input-5"><span class="label">기관 또는 기업</span><input type="text" /></div>
+                            <div class="clearfix"></div>
+                        </dd>
+                        <dd>
+                            <div class="c-input-6"><span class="label">사이트 주소(Optional)</span><input type="text" /></div>
+                            <div class="clearfix"></div>
+                       </dd>
+                    </dl>
+                    <dl class="form-layer-2">
+                        <dt><span class="num">2</span>예산과 일정을 알려주세요.</dt>
+                        <dd>
+                            <div class="c-input-1"><span class="label">예산</span><input type="text" /></div>
+                            <div class="c-input-1"><span class="label">일정</span><input type="text" /></div>
+                            <div class="clearfix"></div>
+                        </dd>
+                    </dl>
+                    <dl class="form-layer-3">
+                        <dt><span class="num">3</span>무엇을 도와드릴까요?</dt>
+                        <dd>
+                            <div class="c-textarea">
+                                <textarea name="content" cols="40" rows="8" placeholder="1000자 이내로 작성해주세요" ></textarea>
+                            </div>
+                        </dd>
+                        <dd>
+                            <div class="c-upload">
+                                <label for="input_file">파일 업로드 (pdf, zip …  최대 3MB)</label>
+                                <input class="upload-name" value="" disabled="disabled" style="width: 200px;">
+                                <input type="file" id="input_file" class="upload-hidden">
+                            </div>
+                        </dd>
+                        <dd>
+                            <div class="c-check"><input type="checkbox" name="chk_private" id="chk_private" /><label for="chk_private"></label><a href="#">개인정보보호정책</a>에 동의합니다.</div>
+                        </dd>
+                    </dl>
+                    <dl class="for-layer-4">
+                       <dd>
+                           <div class="c-btn"><a href="#" class="btn"><i class="icon icon-chat"></i> 우리테크 문의하기</a></div>
+                       </dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!-- e.문의 -->
+
+</div>
 
 <script src="/assets/plugins/particles/particles.js"></script>
 <script>
