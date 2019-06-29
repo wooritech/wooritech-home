@@ -21,7 +21,7 @@ body{
 }
 
 .contents{
-  margin-top:1100px;
+  //margin-top:1100px;
 }
 
 .vertical{
@@ -174,7 +174,8 @@ body{
 
 .slogan{
   .wt-slogan{
-    margin-top:300px;
+    margin-top:200px;
+    margin-bottom:100px;
     h1{
       font-size:48px;
       margin:0; padding:0;
@@ -477,17 +478,46 @@ body{
 }
 
 .members{ //trunk...
-  position: absolute;
-  top:0; left:0;
-  width:100%;
+  //position: absolute;
+  //top:0; left:0;
+  //width:100%;
+  //margin-top:620px;
   z-index:3;
-  margin-top:620px;
   .member-bine{
     height:400px;
     .member-card{
       box-sizing: border-box;
-      background:lighten($wt-gray, 1%);
+      background-color:lighten($wt-gray, 1%);
       height:300px;
+      display: block;
+      background-size:120% !important;
+      .mem-roll{
+        height:inherit;
+        background-size:120% !important;
+        display: none;
+      }
+      .mem-name{
+        position: absolute;
+        bottom:0;
+        background:rgba(0,0,0, .4);
+        color:$wt-white;
+        width:100%;
+        display: none;
+        span{
+          text-align: center;
+          font-size:14px;
+          display: block;
+          padding:5px 10px;
+        }
+      }
+      &:hover{
+        .mem-roll{
+          display: block;
+        }
+        .mem-name{
+          display: block;
+        }
+      }
       &.rookie{
         position: relative;
         .profile-layer{
@@ -595,7 +625,7 @@ body{ //ul
 @include action(xl) {
 
   .contents{
-    margin-top:900px;
+    //margin-top:900px;
   }
 
   .vertical {
@@ -611,7 +641,6 @@ body{ //ul
 
   .slogan {
     .wt-slogan {
-      margin-top: 250px;
     }
   }
 
@@ -648,7 +677,7 @@ body{ //ul
   }
 
   .members{
-    margin-top:550px;
+    //margin-top:550px;
     .stem{
       .member-bine{
         height:350px;
@@ -675,7 +704,7 @@ body{ //ul
 @include action(lg) {
 
   .contents{
-    margin-top:800px;
+    //margin-top:800px;
   }
 
   .vertical{
@@ -712,7 +741,7 @@ body{ //ul
 
   .slogan{
     .wt-slogan{
-      margin-top:250px;
+      //margin-top:250px;
       h1{
         font-size:48px;
         margin:0; padding:0;
@@ -909,7 +938,7 @@ body{ //ul
   }
 
   .members{
-    margin-top:500px;
+    //margin-top:500px;
     .stem{
       .member-bine{
         height:300px;
@@ -936,7 +965,7 @@ body{ //ul
 @include action(md) {
 
   .contents{
-    margin-top:1800px;
+    //margin-top:1800px;
   }
 
   .vertical{
@@ -1149,7 +1178,7 @@ body{ //ul
   }
 
   .members{
-    margin-top:500px;
+    //margin-top:500px;
     .stem{
       .member-bine{
         height:400px;
@@ -1180,7 +1209,7 @@ body{ //ul
 @include action(sm) {
 
   .contents{
-    margin-top:950px;
+    //margin-top:950px;
   }
 
   .vertical{
@@ -1198,7 +1227,7 @@ body{ //ul
 
   .slogan{
     .wt-slogan{
-      margin-top:220px;
+      //margin-top:220px;
       h1{
         font-size:36px;
         text-align: center;
@@ -1392,7 +1421,7 @@ body{ //ul
   }
 
   .members{
-    margin-top:450px;
+    //margin-top:450px;
     .stem{
       .member-bine{
         height:250px;
@@ -1482,7 +1511,7 @@ body{ //ul
 
   .slogan{
     .wt-slogan{
-      margin-top:180px;
+      margin-top:160px;
       h1{
         font-size:28px;
         text-align: center;
@@ -1496,6 +1525,7 @@ body{ //ul
   }
 
   .phils{
+    padding-top:50px;
     padding-bottom:50px;
     .phil-card{
       margin-bottom:50px;
@@ -1675,7 +1705,7 @@ body{ //ul
   }
 
   .members{
-    margin-top:400px;
+    //margin-top:400px;
     .stem{
       width:300px;
       .member-bine{
@@ -1808,11 +1838,29 @@ body{ //ul
   animation-timing-function: ease-in-out;
   animation-delay: 0.4s; margin-top:20px;
 }
+.ani-member-card-10{
+  @include ani(vMemberCardDown, 5s, infinite);
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.6s; margin-top:0;
+}
+.ani-member-card-11{
+  @include ani(vMemberCardUp, 5s, infinite);
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.4s; margin-top:20px;
+}
+.ani-member-card-12{
+  @include ani(vMemberCardDown, 5s, infinite);
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.4s;
+}
+
 .ani-member-card-rookie{
   @include ani(vMemberCardDown, 5s, infinite);
   animation-timing-function: ease-in-out;
   animation-delay: 1s; margin-top:0;
 }
+
+
 
 // UI ... //////////////////////////////
 .btn{

@@ -61,6 +61,7 @@ title : '우리테크 : DEVELOPER FIRST'
                 <h2>REALIZING LIMITLESS POTENTIAL</h2>
             </div>
         </div>
+        <div class="clearfix"></div>
     </div>
 </div>
 
@@ -76,16 +77,29 @@ title : '우리테크 : DEVELOPER FIRST'
     <div class="stem">
         {% for member in site.data.wooritech_members.members %}
         <div class="bine-2 bine-xs-6 bine-sm-3 bine-md-4 member-bine">
-            <div class="content-box member-card ani-member-card-{{ forloop.index }}" style="margin:">
+
+            {% if member.img1 != "" %}
+            <div data-aos="flip-right" class="content-box member-card ani-member-card-{{ forloop.index }}" style="background:url('{{ member.img1 }}') no-repeat center center">
+                <div class="mem-roll" style="background:url('{{ member.img2 }}') no-repeat center center"></div>
+                <div class="mem-name">
+                    <span>{{ member.name }}</span>
+                </div>
                 <!--{{ member.name }}<br />-->
                 <!--{{ member.img1 }}<br />-->
                 <!--{{ member.img2 }}<br />-->
                 <!--{{ member.opt }}-->
             </div>
+            {% else %}
+            <div data-aos="flip-right" class="content-box member-card ani-member-card-{{ forloop.index }}">
+                <div class="mem-name">
+                    <span>{{ member.name }}</span>
+                </div>
+            </div>
+            {% endif %}
         </div>
         {% endfor %}
         <div class="bine-2 bine-xs-6 bine-sm-3 bine-md-4 member-bine">
-            <div class="content-box member-card rookie ani-member-card-rookie" style="margin:">
+            <div data-aos="flip-right" class="content-box member-card rookie ani-member-card-rookie">
                 <div class="profile-layer">
                     <div class="profile"></div>
                 </div>
@@ -114,7 +128,7 @@ title : '우리테크 : DEVELOPER FIRST'
                 <div class="cone">
                     <div class="content-box">
                         {% for p in site.data.wooritech_contents.philasophy %}
-                        <div class="phil-card">
+                        <div data-aos="fade-up"  class="phil-card">
                             <h2>{{ p.en | upcase }}</h2>
                             <h3>{{ p.ko }}</h3>
                             <p>{{ p.desc }}</p>
@@ -140,7 +154,7 @@ title : '우리테크 : DEVELOPER FIRST'
                 <div class="cone">
                     <div class="content-box">
                         {% for f in site.data.wooritech_contents.features %}
-                        <div class="feat-card">
+                        <div data-aos="fade-up" class="feat-card">
                             <img src="{{ f.img }}" />
                             <h2>{{ f.title }}</h2>
                             <p>{{ f.desc }}</p>
@@ -155,7 +169,7 @@ title : '우리테크 : DEVELOPER FIRST'
             <div class="bine-2 no-xs bine-sm-2">&nbsp;</div>
             <div class="bine-10 bine-xs-12 bine-sm-10">
                 <div class="cone">
-                    <a href="#" class="btn"><i class="icon icon-download"></i> 우리테크 회사 소개서 다운로드</a>
+                    <a href="#" data-aos="fade-up" class="btn"><i class="icon icon-download"></i> 우리테크 회사 소개서 다운로드</a>
                 </div>
             </div>
             <div class="clearfix"></div>
@@ -173,7 +187,7 @@ title : '우리테크 : DEVELOPER FIRST'
             <div class="bine-4 bine-xs-12 bine-sm-12">
                 <div class="cone">
                     <div class="content-box">
-                        <div class="history-card">
+                        <div data-aos="fade-up" class="history-card">
                             <div class="vertical"><h2 class="vtitle year">{{ h.year }}</h2></div>
                             <ul>
                                 {% assign do = h.did | split: ", " %}
@@ -196,7 +210,7 @@ title : '우리테크 : DEVELOPER FIRST'
         <div class="stem">
             <div class="bine-2 no-xs no-sm no-md no-lg">&nbsp;</div>
             <div class="bine-10 bine-xs-12 bine-sm-12 bine-md-12 bine-lg-12">
-                <div class="product-slogan">
+                <div data-aos="fade-up" class="product-slogan">
                     <h1>사람과 데이터를 잇다</h1>
                     <h3>이 순간에도 수없이 생성되고 사라지는 데이터 홍수.  우리는 그 속에서 살아가고 있습니다.</h3>
                     <h3>의미있는 데이터를 시각화하고 인간에게 이롭게 하는 길을 걸어갑니다.</h3>
@@ -212,7 +226,7 @@ title : '우리테크 : DEVELOPER FIRST'
             <div class="bine-3 bine-xs-12 bine-sm-6 bine-md-6 bine-lg-6">
                 <div class="cone">
                     <div class="content-box">
-                        <div class="product-card">
+                        <div data-aos="fade-up" class="product-card">
                             <img src="{{pt.logo}}" />
                             <h2>{{pt.title}}</h2>
                             <p>{{pt.desc}}</p>
@@ -236,7 +250,7 @@ title : '우리테크 : DEVELOPER FIRST'
             <div class="bine-2 no-xs bine-sm-2">&nbsp;</div>
             <div class="bine-10 bine-xs-12 bine-sm-10">
             {% for c in site.data.wooritech_clients.clients %}
-                <img src="{{ c.logo }}" title="{{ c.label }}" class="client-logo" />
+                <img src="{{ c.logo }}" title="{{ c.label }}" data-aos="fade-up" class="client-logo" />
             {% endfor %}
             </div>
             <div class="clearfix"></div>
@@ -252,7 +266,7 @@ title : '우리테크 : DEVELOPER FIRST'
         <div class="stem">
             <div class="bine-2 no-xs bine-sm-2">&nbsp;</div>
             <div class="bine-5 bine-xs-12 bind-sm-5">
-                <div class="cone contact-info">
+                <div data-aos="fade-up" class="cone contact-info">
                     <h3>문의</h3>
                     <ul>
                         <li>경기도 성남시 분당구 운중로 135 더원스퀘어 603호</li>
@@ -262,7 +276,7 @@ title : '우리테크 : DEVELOPER FIRST'
                 </div>
             </div>
             <div class="bine-5 bine-xs-12 bind-sm-5">
-                <div class="cone contact-info">
+                <div data-aos="fade-up" class="cone contact-info">
                     <h3>구입문의</h3>
                     <ul>
                         <li>영업대표: 윤 대 섭 이사</li>
@@ -276,7 +290,7 @@ title : '우리테크 : DEVELOPER FIRST'
         <div class="stem">
             <div class="bine-2 no-xs no-sm">&nbsp;</div>
             <div class="bine-10 bine-xs-12 bine-sm-12">
-                <div class="contact-map">
+                <div data-aos="fade-up" class="contact-map">
 
                 </div>
             </div>
@@ -285,7 +299,7 @@ title : '우리테크 : DEVELOPER FIRST'
             <div class="bine-2 no-xs no-sm">&nbsp;</div>
             <div class="bine-10 bine-xs-12 bine-sm-12">
                 <a name="hire"></a>
-                <div class="contact-form">
+                <div data-aos="fade-up" class="contact-form">
                     <span class="wild"><i class="icon icon-info-circled"></i> 아래 양식을 작성하여 문의해주세요.</span>
 
                     <dl class="form-layer-1">
