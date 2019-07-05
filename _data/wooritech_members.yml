@@ -44,6 +44,6 @@ members:
     img2      : "/assets/img/mem-kkc-2.png"
     lv       : ""
   - name      : "Jun Jeong"
-    img1      : ""
-    img2      : ""
+    img1      : "/assets/img/mem-jj-1.png"
+    img2      : "/assets/img/mem-jj-2.png"
     lv       : ""

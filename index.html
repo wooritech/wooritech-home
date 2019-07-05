@@ -79,7 +79,7 @@ title : '우리테크 : DEVELOPER FIRST'
         <div class="bine-2 bine-xs-6 bine-sm-3 bine-md-4 member-bine">
 
             {% if member.img1 != "" %}
-            <div data-aos="flip-right" class="content-box member-card ani-member-card-{{ forloop.index }}" style="background:url('{{ member.img1 }}') no-repeat center center">
+            <a data-aos="" class="content-box member-card ani-member-card-{{ forloop.index }}" style="background:url('{{ member.img1 }}') no-repeat center center">
                 <div class="mem-roll" style="background:url('{{ member.img2 }}') no-repeat center center"></div>
                 <div class="mem-name">
                     <span>{{ member.name }}</span>
@@ -88,7 +88,7 @@ title : '우리테크 : DEVELOPER FIRST'
                 <!--{{ member.img1 }}<br />-->
                 <!--{{ member.img2 }}<br />-->
                 <!--{{ member.opt }}-->
-            </div>
+            </a>
             {% else %}
             <div data-aos="flip-right" class="content-box member-card ani-member-card-{{ forloop.index }}">
                 <div class="mem-name">
