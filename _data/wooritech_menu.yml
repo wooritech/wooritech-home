@@ -11,9 +11,9 @@ topmenu:
   - label: "채용"
     url  : "#hire"
     target : ""
-  - label: "문의"
-    url  : "#contact"
-    target : ""
+#  - label: "문의"
+#    url  : "#contact"
+#    target : ""
 
 links:
   - label: "리얼그리드"
