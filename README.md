@@ -2,24 +2,17 @@
 
 ## 참여방법
 
-### vscode 설치'
-
-[VSCode](https://code.visualstudio.com)
+### 클론
 
 ```
-git clone https://github.com/wooritech/wooritech-home.git
-```
-
-### 코드 내려받기
-
-```
-$ git pull
+$ git clone https://github.com/wooritech/wooritech-home.git
+$ cd wooritech-home
 ```
 
 ### 편집
 
 ```
-$ cd wooritech-home
+$ git pull
 $ code .
 ```
 
