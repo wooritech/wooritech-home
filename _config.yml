@@ -47,7 +47,7 @@ incremental       : false
 detach            : false
 port              : 2019
 host              : 127.0.0.1 #192.168.0.5 VMware IE 테스트시 필요
-baseurl           : "" # does not include hostname
+baseurl           : "/wooritech-home" # does not include hostname
 url               : "http://wooritech.com"
 show_dir_listing  : false
 
