@@ -2,6 +2,12 @@
 
 ## 참여방법
 
+### 준비
+
+[VSCode](https://code.visualstudio.com) 설치
+[git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) 설치
+
+
 ### 클론
 
 ```
