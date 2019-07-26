@@ -47,3 +47,7 @@ members:
     img1      : "/assets/img/mem-jj-1.png"
     img2      : "/assets/img/mem-jj-2.png"
     lv       : ""
+  - name      : "Yeongmu Yang"
+    img1      : "/assets/img/mem-yym-1.png"
+    img2      : "/assets/img/mem-yym-2.png"
+    lv       : ""
