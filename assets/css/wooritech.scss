@@ -1854,6 +1854,36 @@ body{ //ul
   animation-delay: 0.4s;
 }
 
+.ani-member-card-13{
+  @include ani(vMemberCardUp, 5s, infinite);
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.4s;
+}
+
+.ani-member-card-14{
+  @include ani(vMemberCardDown, 5s, infinite);
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.4s;
+}
+
+.ani-member-card-15{
+  @include ani(vMemberCardUp, 5s, infinite);
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.4s;
+}
+
+.ani-member-card-16{
+  @include ani(vMemberCardDown, 5s, infinite);
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.4s;
+}
+
+.ani-member-card-16{
+  @include ani(vMemberCardUp, 5s, infinite);
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.4s;
+}
+
 .ani-member-card-rookie{
   @include ani(vMemberCardDown, 5s, infinite);
   animation-timing-function: ease-in-out;
