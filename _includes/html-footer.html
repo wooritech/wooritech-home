@@ -23,7 +23,7 @@
                 <li>E: support@realgrid.com</li>
             </ul>
         </div>
-        <div class="bine-4 bine-xs-12 bine-sm-12 bine-md-12"><span class="ft-copy">Copyright © 2000-2019 WOORITECH</span></div>
+        <div class="bine-4 bine-xs-12 bine-sm-12 bine-md-12"><span class="ft-copy" id="copyright">Copyright © 2000-2019 WOORITECH</span></div>
         <div class="clearfix"></div>
     </div>
 </div>
@@ -31,4 +31,5 @@
 
 <script>
     AOS.init();
+    document.getElementById('copyright').innerHTML = `Copyright © 2000-${new Date().getFullYear()} WOORITECH`;
 </script>
