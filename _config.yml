@@ -1,92 +1,103 @@
 # 개발자
 author:
- name: "Jowrney Kim"
- mail: "jowrney@jowrney.com"
- url: http://jowrney.com
+  name: 'Jowrney Kim'
+  mail: 'jowrney@jowrney.com'
+  url: http://jowrney.com
 
 # 웹사이트 정보
-title   : "우리테크"
+title: '우리테크'
 description: "'DEVELOPER FIRST, WOORITECH'"
-tagline : 'wooritech'
-version : 1.0.0
-gitlab  :
- repo: "https://github.com/wooritech/wooritech-home"
+tagline: 'wooritech'
+version: 1.0.0
+gitlab:
+  repo: 'https://github.com/wooritech/wooritech-home'
 
 # 소스 디렉토리 정의
-source          : .
-destination     : _site
-plugins_dir     : _plugins
-layouts_dir     : _layouts
-data_dir        : _data
-includes_dir    : _includes
-category_dir    : category/
-tag_dir         : tag/
+source: .
+destination: _site
+plugins_dir: _plugins
+layouts_dir: _layouts
+data_dir: _data
+includes_dir: _includes
+category_dir: category/
+tag_dir: tag/
 
 # 읽기 핸들링
-safe                : false
-include             : [".htaccess"]
-exclude             : ["Gemfile", "Gemfile.lock", "node_modules", "vendor/bundle/", "vendor/cache/", "vendor/gems/", "vendor/ruby/","CNAME",".idea"]
-keep_files          : [".git", ".svn"]
-encoding            : "utf-8"
-markdown_ext        : "markdown,mkdown,mkdn,mkd,md"
+safe: false
+include: ['.htaccess']
+exclude:
+  [
+    'Gemfile',
+    'Gemfile.lock',
+    'node_modules',
+    'vendor/bundle/',
+    'vendor/cache/',
+    'vendor/gems/',
+    'vendor/ruby/',
+    'CNAME',
+    '.idea',
+  ]
+keep_files: ['.git', '.svn']
+encoding: 'utf-8'
+markdown_ext: 'markdown,mkdown,mkdn,mkd,md'
 
 # 필터링
-show_drafts   : null
-limit_posts   : 0
-future        : false
-unpublished   : false
+show_drafts: null
+limit_posts: 0
+future: false
+unpublished: false
 
 # 코딩규칙
-markdown          : kramdown
-highlighter       : rouge
-lsi               : false
-excerpt_separator : "\n\n"
-incremental       : false
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
 
 # 서버
-detach            : false
-port              : 2019
-host              : 127.0.0.1 #192.168.0.5 VMware IE 테스트시 필요
-baseurl           : "" # does not include hostname
-url               : "http://wooritech.com"
-show_dir_listing  : false
+detach: false
+port: 2019
+host: 127.0.0.1 #192.168.0.5 VMware IE 테스트시 필요
+baseurl: '' # does not include hostname
+url: 'https://wooritech.com'
+show_dir_listing: false
 
 # 아웃풋
-permalink       : pretty
-paginate        : 5
-paginate_path   : "/blog/page:num/"
-timezone        : null
-quiet           : false
-verbose         : false
-defaults        : []
+permalink: pretty
+paginate: 5
+paginate_path: '/blog/page:num/'
+timezone: null
+quiet: false
+verbose: false
+defaults: []
 
 liquid:
- error_mode        : warn
- strict_filters    : false
- strict_variables  : false
+  error_mode: warn
+  strict_filters: false
+  strict_variables: false
 
 sass:
- #style: compressed
- sass_dir: _sass
+  #style: compressed
+  sass_dir: _sass
 
 # 마크다운 프로세서
 rdiscount:
- extensions: []
+  extensions: []
 
 redcarpet:
- extensions: []
+  extensions: []
 
 kramdown:
- auto_ids      : true
- entity_output : as_char
- toc_levels    : 1..6
- smart_quotes  : lsquo,rsquo,ldquo,rdquo
- input         : GFM
- hard_wrap     : false
- footnote_nr   : 1
- show_warnings : false
+  auto_ids: true
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  input: GFM
+  hard_wrap: false
+  footnote_nr: 1
+  show_warnings: false
 
 #자산
 assets:
- sources:
-  - _assets
+  sources:
+    - _assets

@@ -1,27 +1,27 @@
 topmenu:
-  - label: "사람"
-    url  : "#people"
-    target : ""
-  - label: "회사소개"
-    url  : "#intro"
-    target : ""
-  - label: "제품"
-    url  : "#products"
-    target : ""
-  - label: "채용"
-    url  : "#hire"
-    target : ""
+  - label: '사람'
+    url: '#people'
+    target: ''
+  - label: '회사소개'
+    url: '#intro'
+    target: ''
+  - label: '제품'
+    url: '#products'
+    target: ''
+  - label: '채용'
+    url: '#hire'
+    target: ''
 #  - label: "문의"
 #    url  : "#contact"
 #    target : ""
 
 links:
-  - label: "리얼그리드"
-    url  : "http://www.realgrid.com"
-    target : "_blank"
-  - label: "리얼데스크"
-    url  : "http://realdesk.kr/"
-    target : "_blank"
-  - label: "아이랩 LIMS"
-    url  : "http://www.ilabs.co.kr/"
-    target : "_blank"
+  - label: '리얼그리드'
+    url: 'https://www.realgrid.com'
+    target: '_blank'
+  - label: '리얼데스크'
+    url: 'https://realdesk.kr/'
+    target: '_blank'
+  - label: '아이랩 LIMS'
+    url: 'http://www.ilabs.co.kr/'
+    target: '_blank'
